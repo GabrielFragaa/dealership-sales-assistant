@@ -1,0 +1,2734 @@
+{
+  "id": "ZOFx9g0GmgGSQEXP",
+  "name": "Agente_Financiamento",
+  "active": true,
+  "isArchived": false,
+  "triggerCount": 3,
+  "createdAt": "2025-06-12T14:14:21.968Z",
+  "updatedAt": "2026-06-02T18:06:54.831Z",
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  },
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase": {
+      "main": [
+        [
+          {
+            "node": "Supabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase1": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Parar Resposta Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Evolution API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Supabase2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase2": {
+      "main": [
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "calcula_financiamento": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca score": {
+      "main": [
+        [
+          {
+            "node": "filtra",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "filtra": {
+      "main": [
+        [
+          {
+            "node": "calcula",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "calcula": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "calculo_financiamento": {
+      "main": [
+        [
+          {
+            "node": "busca score",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "Postgres",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "testdrive": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "agent_inicial": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Execute Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres2": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code3": {
+      "main": [
+        [
+          {
+            "node": "Postgres2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "mensagem"
+            },
+            {
+              "name": "nome"
+            },
+            {
+              "name": "telefone"
+            },
+            {
+              "name": "sessionId"
+            },
+            {
+              "name": "customer_ref"
+            },
+            {
+              "name": "nascimento"
+            },
+            {
+              "name": "modelo_veiculo"
+            },
+            {
+              "name": "cor"
+            },
+            {
+              "name": "preco"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -820,
+        700
+      ],
+      "id": "11e0dc5f-fb77-4f5f-820a-0646ae391d91",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Webhook1').item.json.body.mensagem }}",
+        "options": {
+          "systemMessage": "=# Financing Specialist Agent\n\n## Current Date and Time\nToday is: {{ $now.weekdayLong }}, {{ $now.format('dd/MM/yyyy') }}, {{ $now.hour.toString().padStart(2, '0') }}:{{ $now.minute.toString().padStart(2, '0') }}\n\nFor date math: today is {{ $now.format('dd/MM/yyyy') }}, tomorrow is {{ $now.plus({ days: 1 }).toFormat(\"yyyy-MM-dd\") }}, one week from now is {{ $now.plus({ days: 7 }).toFormat(\"yyyy-MM-dd\") }}.\n\n## REDIRECT RULE - HIGHEST PRIORITY\nIF the customer asks about ANY OTHER VEHICLE than the current one:\n1. Call the `agent_inicial` tool IMMEDIATELY\n2. RETURN NO OUTPUT\n3. STOP EXECUTION HERE - DO NOT CONTINUE\n\n## Main Financing Flow\n\n### 1. Collect information\nDown payment question:\n\"Would you like to make a down payment to reduce the financed amount?\"\n- Store the answer in `entrada` (numeric value)\n\n### 2. Call the calculate-financing tool\nUse the calculate-financing tool with these parameters:\n\n```json\n{\n  \"customer_ref\": \"{{ $('Supabase2').item.json.customer_ref }}\",\n  \"customer_name\": \"{{ $('Supabase2').item.json.nome }}\",\n  \"car_model\": \"{{ $('Supabase2').item.json.modelo }}\",\n  \"amount\": {{ $json.preco_numerico }},\n  \"down_payment\": {{entrada}}\n}\n```\n\n### 3. Present the result\nShow ONLY what the tool returns:\n- installment_value\n- total_paid\n- amortization (if any)\n\n### 4. Post-financing\nIf financing is approved AND {{ $('Supabase2').item.json.data_agendamento }} = 'null':\n- Ask: \"Shall we book a test drive?\"\n- Request: email, date and time\n- Call the `testdrive` tool\n\n## Important Rules\n- DO NOT change, explain or manipulate the calculations\n- Only collect information and pass it to the tool\n- Approval, interest and installment rules belong to the calculate-financing tool\n- Keep the conversation objective and professional\n- DO NOT greet, just continue the conversation\n\n## CRITICAL REDIRECT INSTRUCTION\n```\nWHEN calling the 'agent_inicial' tool:\n- RUN the tool\n- RETURN: [EMPTY - NO OUTPUT]\n- END EXECUTION\n```\n\nRedirect triggers:\n- Customer mentions another car model\n- Customer asks about other vehicles\n- Customer wants to see other options\n- Any interest outside the current vehicle\n\nIf you are wrapping up the conversation, end with this message: \"It was a pleasure helping you.\" "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        560,
+        180
+      ],
+      "id": "44d92edc-499c-472d-b123-ae4f7bfa1d0c",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        380
+      ],
+      "id": "4a326775-2b3d-4230-bee9-06d5c9bcbe36",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Webhook1').item.json.body.sessionId }}",
+        "tableName": "dealership_messages",
+        "contextWindowLength": 100
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        520,
+        380
+      ],
+      "id": "5aad6655-4f6c-46b8-a24f-44ca452bab95",
+      "name": "Postgres Chat Memory"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "dados_cliente",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "sessionid",
+              "keyValue": "={{ $json.sessionId }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        700
+      ],
+      "id": "b4303a15-31d9-45f5-a08f-c83a122c55ec",
+      "name": "Supabase"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "dados_cliente",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "sessionid",
+              "condition": "eq",
+              "keyValue": "={{ $json.sessionid }}"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "nome",
+              "fieldValue": "={{ $('When Executed by Another Workflow').item.json.nome }}"
+            },
+            {
+              "fieldId": "status",
+              "fieldValue": "Financiamento"
+            },
+            {
+              "fieldId": "modelo",
+              "fieldValue": "={{ $('When Executed by Another Workflow').item.json.modelo_veiculo }}"
+            },
+            {
+              "fieldId": "customer_ref",
+              "fieldValue": "={{ $('When Executed by Another Workflow').item.json.customer_ref }}"
+            },
+            {
+              "fieldId": "nascimento",
+              "fieldValue": "={{ $('When Executed by Another Workflow').item.json.nascimento }}"
+            },
+            {
+              "fieldId": "cor",
+              "fieldValue": "={{ $('When Executed by Another Workflow').item.json.cor }}"
+            },
+            {
+              "fieldId": "preco",
+              "fieldValue": "={{ $('When Executed by Another Workflow').item.json.preco }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        700
+      ],
+      "id": "2a3f1d0c-10d1-4da0-9e09-3b43a21c1b43",
+      "name": "Supabase1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e4cf5631-5c1f-4a2e-9394-8053d46240a5",
+              "name": "response",
+              "value": "=Perfect, {{ $('When Executed by Another Workflow').item.json.nome.split(\" \")[0] }}, the assistant will reach out to share your financing simulation and details, ok?",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        100,
+        700
+      ],
+      "id": "11913457-ee1e-465c-a92f-973bb2559755",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "financiamento",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -820,
+        380
+      ],
+      "id": "07dc0962-e715-4c51-9eeb-1bef558c45e6",
+      "name": "Webhook"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://example.com/webhook/financing",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "nome",
+              "value": "={{ $('When Executed by Another Workflow').item.json.nome }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $('When Executed by Another Workflow').item.json.telefone }}"
+            },
+            {
+              "name": "customer_ref",
+              "value": "={{ $('When Executed by Another Workflow').item.json.customer_ref }}"
+            },
+            {
+              "name": "sessionId",
+              "value": "={{ $('When Executed by Another Workflow').item.json.sessionId }}"
+            },
+            {
+              "name": "nascimento",
+              "value": "={{ $('When Executed by Another Workflow').item.json.nascimento }}"
+            },
+            {
+              "name": "=marca",
+              "value": "={{ $json.marca }}"
+            },
+            {
+              "name": "modelo",
+              "value": "={{ $json.modelo }}"
+            },
+            {
+              "name": "preco",
+              "value": "={{ $json.preco }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -60,
+        700
+      ],
+      "id": "d41751d8-7400-4d29-8c0b-4426d34ca477",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT *, \n       similarity(UPPER(modelo), UPPER('{{ $('When Executed by Another Workflow').item.json.modelo_veiculo }}')) as score,\n       CASE \n         WHEN UPPER(cor) = UPPER('{{ $('When Executed by Another Workflow').item.json.cor }}') \n              AND (preco = '{{ $('When Executed by Another Workflow').item.json.preco }}'\n                   OR preco = 'R$ {{ $('When Executed by Another Workflow').item.json.preco }}'\n                   OR REPLACE(REPLACE(preco, 'R$ ', ''), '.', '') = '{{ $('When Executed by Another Workflow').item.json.preco }}') THEN 100\n         WHEN UPPER(cor) = UPPER('{{ $('When Executed by Another Workflow').item.json.cor }}') THEN 90\n         ELSE 80\n       END as match_quality\nFROM estoque \nWHERE UPPER(modelo) ILIKE UPPER('%{{ $('Code2').item.json.modelo_normalizado }}%')\nORDER BY match_quality DESC, score DESC\nLIMIT 1;",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        -220,
+        700
+      ],
+      "id": "844bd20f-b9df-4b84-9af8-999fa092a70a",
+      "name": "Postgres"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -640,
+        380
+      ],
+      "id": "5a023306-d4df-4b4d-91b9-afd0d82a4218",
+      "name": "Wait"
+    },
+    {
+      "parameters": {
+        "resource": "messages-api",
+        "instanceName": "{{EVOLUTION_INSTANCE}}",
+        "remoteJid": "={{ $json.body.telefone }}",
+        "messageText": "=Hi {{ $json.body.nome.split(' ')[0] }}, how are you?\n\nI'm the financing assistant here at the dealership and I'll help you with your financing simulation, ok?\n\nJust to confirm your details:\n\n*Full Name:* {{ $json.body.nome }}\n*Reference:* {{ $json.body.customer_ref }}\n*Date of Birth:* {{ $json.body.nascimento }}\n\nThe simulation will be for *{{ $json.body.marca }} {{ $json.body.modelo }}* at *{{ $json.body.preco }}*, correct?",
+        "options_message": {}
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        380
+      ],
+      "id": "58ec3cb7-7334-49d5-87ee-f719ba1c0262",
+      "name": "Evolution API"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "financiamento_agent",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        180
+      ],
+      "id": "06fb005e-199f-46cf-858b-aa22eab460c8",
+      "name": "Webhook1"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "dados_cliente",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "sessionid",
+              "keyValue": "={{ $json.body.sessionId }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        180
+      ],
+      "id": "da163fd1-6f1f-4e31-b81a-7f131a4d565f",
+      "name": "Supabase2"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        960,
+        380
+      ],
+      "id": "f0b3cc2a-7f53-457f-995f-cbc793ebb65f",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "nxlM1uo8npvjFdBo",
+          "mode": "list",
+          "cachedResultName": "Messaging Reply"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "mensagem": "={{ $('AI Agent').item.json.output }}",
+            "destinatario": "={{ $('Webhook1').item.json.body.telefone }}",
+            "instancia": "devlabz",
+            "sessionId": "={{ $('Webhook1').item.json.body.sessionId }}",
+            "input_agent": "={{ $('Webhook1').item.json.body.mensagem }}",
+            "output_agent": "={{ $json.output }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "mensagem",
+              "displayName": "mensagem",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "destinatario",
+              "displayName": "destinatario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "instancia",
+              "displayName": "instancia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "imagem",
+              "displayName": "imagem",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "sessionId",
+              "displayName": "sessionId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "input_agent",
+              "displayName": "input_agent",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "output_agent",
+              "displayName": "output_agent",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1160,
+        40
+      ],
+      "id": "56e96838-5b59-4f33-a9d6-d4d024e5dfee",
+      "name": "Execute Workflow"
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $input.item.json;\n\nconst precoLimpo = input.preco\n  .replace('R$', '')\n  .replace(/\\./g, '')\n  .replace(',', '.')\n  .trim();\n\nconst precoNumerico = Math.round(parseFloat(precoLimpo));\n\nreturn {\n  json: {\n    preco_numerico: precoNumerico\n  }\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        180
+      ],
+      "id": "476e794d-21dc-4edb-96ee-002f35fe0b55",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ $('When Executed by Another Workflow').item.json.sessionId }}_block",
+        "value": "true",
+        "keyType": "string",
+        "expire": true,
+        "ttl": 20
+      },
+      "id": "8dade714-cede-4a37-8ec1-fc3f392fbceb",
+      "name": "Parar Resposta Agent",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        260,
+        700
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "calculo_financiamento",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        500,
+        760
+      ],
+      "id": "e843baf8-736a-4530-a539-4779763ed677",
+      "name": "calculo_financiamento"
+    },
+    {
+      "parameters": {
+        "toolDescription": "utilize essa tool para fazer o calculo de financiamento e verificar disponibilidade de credito.\n",
+        "method": "POST",
+        "url": "https://example.com/webhook/calculate-financing",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "customer_ref",
+              "value": "={{ $fromAI('customer_ref', `customer reference`, 'number') }}"
+            },
+            {
+              "name": "nome_cliente",
+              "value": "={{ $('Supabase2').item.json.nome }}"
+            },
+            {
+              "name": "modelo_carro",
+              "value": "={{ $('Supabase2').item.json.modelo }}"
+            },
+            {
+              "name": "valor",
+              "value": "={{ $('Code').item.json.preco_numerico }}"
+            },
+            {
+              "name": "entrada",
+              "value": "={{ $fromAI('entrada', `valor de entrada de financiamento`, 'number') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        380
+      ],
+      "id": "ce6db0c2-a2f6-4a53-b28a-3a62c7089e2c",
+      "name": "calcula_financiamento"
+    },
+    {
+      "parameters": {
+        "url": "https://example.com/api/credit-score",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "Reference",
+              "value": "={{ $json.body.customer_ref }}"
+            },
+            {
+              "name": "TOKEN",
+              "value": "sua api key"
+            },
+            {
+              "name": "GERARCOMPROVANTE",
+              "value": "false"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        760
+      ],
+      "id": "a76adce7-88dc-416d-891d-6d96cd168624",
+      "name": "busca score",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function Node para n8n: agrupa as informações extraídas em um único objeto (um único item de saída)\n\nconst resultado = items.map(item => {\n  const data = item.json;\n  const meta    = data.metaDados || {};\n  const ret     = data.retorno || {};\n  const pf = ret.pessoaFisica || {};\n\n  return {\n    nome_cliente:       meta.usuario || null,\n    customer_ref:        (ret.documentoConsultado || '').replace(/\\D/g, ''),\n    data_consulta:      ret.dataConsulta || null,\n    score:              pf.score || null,\n    faixa_score:        pf.faixaScore || null,\n    capacidade_pagamento: pf.capacidadePagamento || null,\n    perfil:             pf.perfil || null,\n    status_pendencia:   pf.pendenciaFinanceira?.status || null,\n    total_pendencia:    pf.pendenciaFinanceira?.totalPendencia ?? null\n  };\n});\n\n// Retorna um único item com a variável 'resultado_final'\nreturn [{ json: { resultado_final: resultado } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        860,
+        680
+      ],
+      "id": "b22c9666-4bd1-4a5a-959f-9a3eceda5f45",
+      "name": "filtra"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Puxa os dados do node \"calculo_financiamento\"\nconst input = $('calculo_financiamento').first().json.body;\nconst modeloCarro = input.modelo_carro || 'Não especificado';\nconst valorCarro = parseFloat(input.valor) || 0;\nconst entrada = parseFloat(input.entrada) || 0;\n\n// Calcula o percentual de entrada e o valor financiado\nconst percentualEntrada = valorCarro > 0 ? (entrada / valorCarro) * 100 : 0;\nconst valorFinanciado = valorCarro - entrada;\n\n// Dados do cliente (resultado_final)\nconst dadosEntrada = items[0].json || {};\nconst cliente = {\n  customer_ref: input.customer_ref || null,\n  nome_cliente: input.nome_cliente || null,\n  score: dadosEntrada.resultado_final?.[0]?.score || 0,\n  faixa_score: dadosEntrada.resultado_final?.[0]?.faixa_score || null\n};\n\nconst score = parseInt(cliente.score) || 0;\n\n// Variáveis de decisão\nlet taxaJurosMensal = 3.5;\nlet maxParcelas = 24;\nlet aprovado = false;\nlet motivoRecusa = 'Score muito baixo para financiamento (abaixo de 500)';\n\n// Lógica de score + entrada\nif (score >= 700) {\n  taxaJurosMensal = 1.0;\n  maxParcelas = 60;\n  aprovado = true;\n} else if (score >= 600) {\n  taxaJurosMensal = 1.5;\n  maxParcelas = 48;\n  aprovado = true;\n} else if (score >= 500) {\n  taxaJurosMensal = 2.5;\n  maxParcelas = 36;\n  aprovado = true;\n}\n\n// Ajustes dinâmicos com base na entrada\nif (percentualEntrada >= 40) {\n  aprovado = true;\n  motivoRecusa = null;\n\n  const descontoJuros = Math.min((percentualEntrada - 40) * 0.05, 1.0);\n  taxaJurosMensal = Math.max(taxaJurosMensal - descontoJuros, 0.8);\n  maxParcelas += Math.floor(percentualEntrada / 5);\n  maxParcelas = Math.min(maxParcelas, 72);\n}\n\n// Função de cálculo de parcela (Price)\nfunction calcularParcela(valor, taxa, parcelas) {\n  const i = taxa / 100;\n  return valor * (i * Math.pow(1 + i, parcelas)) / (Math.pow(1 + i, parcelas) - 1);\n}\n\nif (!aprovado) {\n  return [{\n    json: {\n      nome_cliente: cliente.nome_cliente,\n      customer_ref: cliente.customer_ref,\n      modelo_carro: modeloCarro,\n      valor_carro: valorCarro,\n      entrada: entrada,\n      valor_financiado: valorFinanciado,\n      percentual_entrada: parseFloat(percentualEntrada.toFixed(2)),\n      score: cliente.score,\n      faixa_score: cliente.faixa_score,\n      status_financiamento: \"Reprovado\",\n      motivo_recusa: motivoRecusa\n    }\n  }];\n}\n\nconst numeroParcelas = Math.min(maxParcelas, 72);\nconst valorParcela = calcularParcela(valorFinanciado, taxaJurosMensal, numeroParcelas);\nconst totalPago = valorParcela * numeroParcelas;\n\nreturn [{\n  json: {\n    nome_cliente: cliente.nome_cliente,\n    customer_ref: cliente.customer_ref,\n    modelo_carro: modeloCarro,\n    valor_carro: valorCarro,\n    entrada: entrada,\n    valor_financiado: valorFinanciado,\n    percentual_entrada: parseFloat(percentualEntrada.toFixed(2)),\n    valor_total_financiado: parseFloat(valorFinanciado.toFixed(2)),\n    score: cliente.score,\n    faixa_score: cliente.faixa_score,\n    status_financiamento: \"Aprovado\",\n    taxa_juros_mensal: parseFloat(taxaJurosMensal.toFixed(2)),\n    numero_parcelas: numeroParcelas,\n    valor_parcela: parseFloat(valorParcela.toFixed(2)),\n    total_pago: parseFloat(totalPago.toFixed(2))\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1020,
+        680
+      ],
+      "id": "d25cc862-375e-41b9-8776-a63fc754ff35",
+      "name": "calcula"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Read the input data\nconst financiamento = items[0].json || {};\n\n// Build the financing explanation\nlet resposta = `Hi, ${financiamento.nome_cliente || 'Customer'},`;\nresposta += `Here are the details of your financing simulation:\\n\\n`;\n\nresposta += `Selected vehicle: ${financiamento.modelo_carro || 'Not provided'}\\n`;\nresposta += `Vehicle price: $ ${parseFloat(financiamento.valor_carro || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n`;\nresposta += `Down payment: $ ${parseFloat(financiamento.entrada || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })} (${parseFloat(financiamento.percentual_entrada || 0).toFixed(2)}% of the vehicle price)\\n`;\nresposta += `Financed amount: $ ${parseFloat(financiamento.valor_financiado || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n\\n`;\n\nif (financiamento.status_financiamento === \"Reprovado\") {\n  resposta += `Financing status: Declined\\n`;\n  resposta += `Reason: ${financiamento.motivo_recusa || 'Insufficient score'}\\n\\n`;\n  resposta += `If you like, we can look at other options or wait for a new review later.\\n`;\n} else {\n  resposta += `Financing status: Approved\\n`;\n  resposta += `Credit score used in the review: ${financiamento.score || 'Not provided'}\\n`;\n  resposta += `Monthly interest rate applied: ${parseFloat(financiamento.taxa_juros_mensal || 0).toFixed(2)}%\\n`;\n  resposta += `Number of installments: ${financiamento.numero_parcelas}\\n\\n`;\n\n  // Show extra costs if present (simple)\n  if (financiamento.custos_administrativos > 0) {\n    resposta += `Administrative costs applied: $ ${parseFloat(financiamento.custos_administrativos || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n`;\n  }\n\n  if (financiamento.seguro_veicular > 0) {\n    resposta += `Vehicle insurance: $ ${parseFloat(financiamento.seguro_veicular || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n`;\n  }\n\n  resposta += `Total amount to be financed: $ ${parseFloat(financiamento.valor_total_financiado || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n\\n`;\n\n  resposta += `Approximate installment value: $ ${parseFloat(financiamento.valor_parcela || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n`;\n  resposta += `Total to be paid at the end of the financing: $ ${parseFloat(financiamento.total_pago || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n\\n`;\n\n  resposta += `How the calculation works:\\n`;\n  resposta += `The installment value is computed using the Price method (fixed installments), based on the total financed amount, the monthly interest rate and the number of installments.\\n\\n`;\n\n  resposta += `Remember: the larger the down payment, the lower the interest rate and the more installment options available.\\n`;\n  resposta += `Keeping a good credit history also helps to get better terms in future simulations.\\n\\n`;\n\n  resposta += `If you have any questions or want to move forward with the financing, I am here to help.\\n`;\n}\n\n// Return the response as JSON to send to the customer\nreturn [{\n  json: {\n    mensagem_final: resposta\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1160,
+        680
+      ],
+      "id": "16efeb53-bc50-470f-86d0-61abba39fe71",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1cd2e292-045f-4d4c-b692-552d26ccb639",
+              "name": "tool_response",
+              "value": "=respond with exactly this: {{ $json.mensagem_final }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1320,
+        680
+      ],
+      "id": "1191c168-23f5-427c-89f0-b5f8a3afce39",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $json.modelo || '';\n\n// Extrai apenas a primeira palavra significativa do modelo\nconst palavras = input.trim().split(' ');\nconst modeloPrincipal = palavras[0]; // Pega só a primeira palavra (ex: \"Sentra\")\n\n// Normaliza apenas a palavra principal\nconst normalizado = modeloPrincipal\n  .normalize(\"NFD\")\n  .replace(/[\\u0300-\\u036f]/g, \"\")\n  .replace(/HB20/gi, 'HB 20')\n  .toUpperCase()\n  .trim();\n\nreturn [{ json: { modelo_normalizado: normalizado } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -360,
+        700
+      ],
+      "id": "bab48e7e-8bde-4d63-b2a3-a921f6628c69",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KAX6D48iolfSh18y",
+          "mode": "id"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "nome": "={{ $('Supabase2').item.json.nome }}",
+            "email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('email', `email do cliente`, 'string') }}",
+            "dataehora": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('dataehora', `sem timezone`, 'string') }}",
+            "telefone": "={{ $('Supabase2').item.json.telefone }}",
+            "sessionId": "={{ $('Supabase2').item.json.sessionid }}",
+            "veiculo": "={{ $('Supabase2').item.json.modelo }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "nome",
+              "displayName": "nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "telefone",
+              "displayName": "telefone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "dataehora",
+              "displayName": "dataehora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "sessionId",
+              "displayName": "sessionId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "veiculo",
+              "displayName": "veiculo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        840,
+        380
+      ],
+      "id": "dbc02b81-c044-4cbe-9a16-499574993726",
+      "name": "testdrive"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "YcCCCDAajcEy99WN",
+          "mode": "id"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "mensagem": "={{ $('Webhook1').item.json.body.mensagem }}",
+            "telefone": "={{ $('Webhook1').item.json.body.telefone }}",
+            "sessionId": "={{ $('Webhook1').item.json.body.sessionId }}",
+            "status": "Indefinido"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "mensagem",
+              "displayName": "mensagem",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "telefone",
+              "displayName": "telefone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "sessionId",
+              "displayName": "sessionId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1080,
+        380
+      ],
+      "id": "e85f5a0b-c2d0-4e38-b979-a4e3d68259db",
+      "name": "agent_inicial"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "dc850a73-db3e-4b7e-a964-fa561fdb6e18",
+              "leftValue": "={{ $json.output }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        920,
+        180
+      ],
+      "id": "a809a0b3-a4f6-478a-be24-2ccccf7c3207",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        200
+      ],
+      "id": "f2d80b1e-ec12-4369-9bfa-514e3ae04583",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT *, \n       similarity(UPPER(modelo), UPPER('{{ $('Webhook1').item.json.modelo_veiculo }}')) as score,\n       CASE \n         WHEN UPPER(cor) = UPPER('{{ $('Supabase2').item.json.cor }}') \n              AND (preco = '{{ $('Supabase2').item.json.preco }}'\n                   OR preco = 'R$ {{ $('Supabase2').item.json.preco }}'\n                   OR REPLACE(REPLACE(preco, 'R$ ', ''), '.', '') = '{{ $('Supabase2').item.json.preco }}') THEN 100\n         WHEN UPPER(cor) = UPPER('{{ $('Supabase2').item.json.cor }}') THEN 90\n         ELSE 80\n       END as match_quality\nFROM estoque \nWHERE UPPER(modelo) ILIKE UPPER('%{{ $('Code3').item.json.modelo_normalizado }}%')\nORDER BY match_quality DESC, score DESC\nLIMIT 1;\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        240,
+        180
+      ],
+      "id": "b7056b73-096b-4fe0-895d-11f7e44d43db",
+      "name": "Postgres2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $json.modelo || '';\n\n// Extrai apenas a primeira palavra significativa do modelo\nconst palavras = input.trim().split(' ');\nconst modeloPrincipal = palavras[0]; // Pega só a primeira palavra (ex: \"Sentra\")\n\n// Normaliza apenas a palavra principal\nconst normalizado = modeloPrincipal\n  .normalize(\"NFD\")\n  .replace(/[\\u0300-\\u036f]/g, \"\")\n  .replace(/HB20/gi, 'HB 20')\n  .toUpperCase()\n  .trim();\n\nreturn [{ json: { modelo_normalizado: normalizado } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        80,
+        180
+      ],
+      "id": "11d61ab8-2d81-421b-a607-8372c8062d1a",
+      "name": "Code3"
+    },
+    {
+      "parameters": {
+        "content": "# Receive Financing Intent",
+        "height": 80,
+        "width": 600,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -860,
+        580
+      ],
+      "typeVersion": 1,
+      "id": "b7541e9e-6fea-4138-be8e-a7e91c33ec7e",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 300,
+        "width": 1320,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -880,
+        560
+      ],
+      "typeVersion": 1,
+      "id": "c7412459-02fe-4cb4-a2c2-479de4b50096",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Start Financing Assistant",
+        "height": 80,
+        "width": 220,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -860,
+        260
+      ],
+      "typeVersion": 1,
+      "id": "38317aaf-ad46-4f84-b2cb-00e2324cf740",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 300,
+        "width": 600,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -880,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "34e3a578-2d26-4704-b154-0e87a6b2b741",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# Receive Financing Intent",
+        "height": 80,
+        "width": 600,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -240,
+        40
+      ],
+      "typeVersion": 1,
+      "id": "c8364891-6015-4e71-9259-ccd5a4f70e6b",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 520,
+        "width": 1600,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -260,
+        20
+      ],
+      "typeVersion": 1,
+      "id": "5d45b5b8-1941-481b-998d-8dc3d0608c61",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "# Calculate Financing",
+        "height": 80,
+        "width": 400,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        480,
+        580
+      ],
+      "typeVersion": 1,
+      "id": "33db9ca6-dc02-4276-8dd5-cc373439e339",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 440,
+        "width": 1060,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        460,
+        560
+      ],
+      "typeVersion": 1,
+      "id": "00213c1f-bef8-4a3f-b590-49ba03fb2701",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "113acc75-e11f-4775-83de-808812a1fe33",
+              "name": "response",
+              "value": "I need a valid reference to run the check, can you share it {{nome}} please?",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        860,
+        840
+      ],
+      "id": "6602f766-1d8a-4f48-8490-e6b641bfcc07",
+      "name": "Edit Fields2"
+    }
+  ],
+  "activeVersion": {
+    "nodes": [
+      {
+        "parameters": {
+          "workflowInputs": {
+            "values": [
+              {
+                "name": "mensagem"
+              },
+              {
+                "name": "nome"
+              },
+              {
+                "name": "telefone"
+              },
+              {
+                "name": "sessionId"
+              },
+              {
+                "name": "customer_ref"
+              },
+              {
+                "name": "nascimento"
+              },
+              {
+                "name": "modelo_veiculo"
+              },
+              {
+                "name": "cor"
+              },
+              {
+                "name": "preco"
+              }
+            ]
+          }
+        },
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "typeVersion": 1.1,
+        "position": [
+          -820,
+          700
+        ],
+        "id": "11e0dc5f-fb77-4f5f-820a-0646ae391d91",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "parameters": {
+          "promptType": "define",
+          "text": "={{ $('Webhook1').item.json.body.mensagem }}",
+          "options": {
+            "systemMessage": "=# Financing Specialist Agent\n\n## Current Date and Time\nToday is: {{ $now.weekdayLong }}, {{ $now.format('dd/MM/yyyy') }}, {{ $now.hour.toString().padStart(2, '0') }}:{{ $now.minute.toString().padStart(2, '0') }}\n\nFor date math: today is {{ $now.format('dd/MM/yyyy') }}, tomorrow is {{ $now.plus({ days: 1 }).toFormat(\"yyyy-MM-dd\") }}, one week from now is {{ $now.plus({ days: 7 }).toFormat(\"yyyy-MM-dd\") }}.\n\n## REDIRECT RULE - HIGHEST PRIORITY\nIF the customer asks about ANY OTHER VEHICLE than the current one:\n1. Call the `agent_inicial` tool IMMEDIATELY\n2. RETURN NO OUTPUT\n3. STOP EXECUTION HERE - DO NOT CONTINUE\n\n## Main Financing Flow\n\n### 1. Collect information\nDown payment question:\n\"Would you like to make a down payment to reduce the financed amount?\"\n- Store the answer in `entrada` (numeric value)\n\n### 2. Call the calculate-financing tool\nUse the calculate-financing tool with these parameters:\n\n```json\n{\n  \"customer_ref\": \"{{ $('Supabase2').item.json.customer_ref }}\",\n  \"customer_name\": \"{{ $('Supabase2').item.json.nome }}\",\n  \"car_model\": \"{{ $('Supabase2').item.json.modelo }}\",\n  \"amount\": {{ $json.preco_numerico }},\n  \"down_payment\": {{entrada}}\n}\n```\n\n### 3. Present the result\nShow ONLY what the tool returns:\n- installment_value\n- total_paid\n- amortization (if any)\n\n### 4. Post-financing\nIf financing is approved AND {{ $('Supabase2').item.json.data_agendamento }} = 'null':\n- Ask: \"Shall we book a test drive?\"\n- Request: email, date and time\n- Call the `testdrive` tool\n\n## Important Rules\n- DO NOT change, explain or manipulate the calculations\n- Only collect information and pass it to the tool\n- Approval, interest and installment rules belong to the calculate-financing tool\n- Keep the conversation objective and professional\n- DO NOT greet, just continue the conversation\n\n## CRITICAL REDIRECT INSTRUCTION\n```\nWHEN calling the 'agent_inicial' tool:\n- RUN the tool\n- RETURN: [EMPTY - NO OUTPUT]\n- END EXECUTION\n```\n\nRedirect triggers:\n- Customer mentions another car model\n- Customer asks about other vehicles\n- Customer wants to see other options\n- Any interest outside the current vehicle\n\nIf you are wrapping up the conversation, end with this message: \"It was a pleasure helping you.\" "
+          }
+        },
+        "type": "@n8n/n8n-nodes-langchain.agent",
+        "typeVersion": 1.9,
+        "position": [
+          560,
+          180
+        ],
+        "id": "44d92edc-499c-472d-b123-ae4f7bfa1d0c",
+        "name": "AI Agent"
+      },
+      {
+        "parameters": {
+          "model": {
+            "__rl": true,
+            "value": "gpt-4o",
+            "mode": "list",
+            "cachedResultName": "gpt-4o"
+          },
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+        "typeVersion": 1.2,
+        "position": [
+          380,
+          380
+        ],
+        "id": "4a326775-2b3d-4230-bee9-06d5c9bcbe36",
+        "name": "OpenAI Chat Model"
+      },
+      {
+        "parameters": {
+          "sessionIdType": "customKey",
+          "sessionKey": "={{ $('Webhook1').item.json.body.sessionId }}",
+          "tableName": "dealership_messages",
+          "contextWindowLength": 100
+        },
+        "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+        "typeVersion": 1.3,
+        "position": [
+          520,
+          380
+        ],
+        "id": "5aad6655-4f6c-46b8-a24f-44ca452bab95",
+        "name": "Postgres Chat Memory"
+      },
+      {
+        "parameters": {
+          "operation": "get",
+          "tableId": "dados_cliente",
+          "filters": {
+            "conditions": [
+              {
+                "keyName": "sessionid",
+                "keyValue": "={{ $json.sessionId }}"
+              }
+            ]
+          }
+        },
+        "type": "n8n-nodes-base.supabase",
+        "typeVersion": 1,
+        "position": [
+          -660,
+          700
+        ],
+        "id": "b4303a15-31d9-45f5-a08f-c83a122c55ec",
+        "name": "Supabase"
+      },
+      {
+        "parameters": {
+          "operation": "update",
+          "tableId": "dados_cliente",
+          "filters": {
+            "conditions": [
+              {
+                "keyName": "sessionid",
+                "condition": "eq",
+                "keyValue": "={{ $json.sessionid }}"
+              }
+            ]
+          },
+          "fieldsUi": {
+            "fieldValues": [
+              {
+                "fieldId": "nome",
+                "fieldValue": "={{ $('When Executed by Another Workflow').item.json.nome }}"
+              },
+              {
+                "fieldId": "status",
+                "fieldValue": "Financiamento"
+              },
+              {
+                "fieldId": "modelo",
+                "fieldValue": "={{ $('When Executed by Another Workflow').item.json.modelo_veiculo }}"
+              },
+              {
+                "fieldId": "customer_ref",
+                "fieldValue": "={{ $('When Executed by Another Workflow').item.json.customer_ref }}"
+              },
+              {
+                "fieldId": "nascimento",
+                "fieldValue": "={{ $('When Executed by Another Workflow').item.json.nascimento }}"
+              },
+              {
+                "fieldId": "cor",
+                "fieldValue": "={{ $('When Executed by Another Workflow').item.json.cor }}"
+              },
+              {
+                "fieldId": "preco",
+                "fieldValue": "={{ $('When Executed by Another Workflow').item.json.preco }}"
+              }
+            ]
+          }
+        },
+        "type": "n8n-nodes-base.supabase",
+        "typeVersion": 1,
+        "position": [
+          -500,
+          700
+        ],
+        "id": "2a3f1d0c-10d1-4da0-9e09-3b43a21c1b43",
+        "name": "Supabase1"
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "e4cf5631-5c1f-4a2e-9394-8053d46240a5",
+                "name": "response",
+                "value": "=Perfect, {{ $('When Executed by Another Workflow').item.json.nome.split(\" \")[0] }}, the assistant will reach out to share your financing simulation and details, ok?",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          100,
+          700
+        ],
+        "id": "11913457-ee1e-465c-a92f-973bb2559755",
+        "name": "Edit Fields"
+      },
+      {
+        "parameters": {
+          "httpMethod": "POST",
+          "path": "financiamento",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [
+          -820,
+          380
+        ],
+        "id": "07dc0962-e715-4c51-9eeb-1bef558c45e6",
+        "name": "Webhook",
+        "webhookId": "bafd5dbb-3072-44f9-9f73-57c5c3120cf4"
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "https://example.com/webhook/financing",
+          "sendBody": true,
+          "bodyParameters": {
+            "parameters": [
+              {
+                "name": "nome",
+                "value": "={{ $('When Executed by Another Workflow').item.json.nome }}"
+              },
+              {
+                "name": "telefone",
+                "value": "={{ $('When Executed by Another Workflow').item.json.telefone }}"
+              },
+              {
+                "name": "customer_ref",
+                "value": "={{ $('When Executed by Another Workflow').item.json.customer_ref }}"
+              },
+              {
+                "name": "sessionId",
+                "value": "={{ $('When Executed by Another Workflow').item.json.sessionId }}"
+              },
+              {
+                "name": "nascimento",
+                "value": "={{ $('When Executed by Another Workflow').item.json.nascimento }}"
+              },
+              {
+                "name": "=marca",
+                "value": "={{ $json.marca }}"
+              },
+              {
+                "name": "modelo",
+                "value": "={{ $json.modelo }}"
+              },
+              {
+                "name": "preco",
+                "value": "={{ $json.preco }}"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [
+          -60,
+          700
+        ],
+        "id": "d41751d8-7400-4d29-8c0b-4426d34ca477",
+        "name": "HTTP Request"
+      },
+      {
+        "parameters": {
+          "operation": "executeQuery",
+          "query": "SELECT *, \n       similarity(UPPER(modelo), UPPER('{{ $('When Executed by Another Workflow').item.json.modelo_veiculo }}')) as score,\n       CASE \n         WHEN UPPER(cor) = UPPER('{{ $('When Executed by Another Workflow').item.json.cor }}') \n              AND (preco = '{{ $('When Executed by Another Workflow').item.json.preco }}'\n                   OR preco = 'R$ {{ $('When Executed by Another Workflow').item.json.preco }}'\n                   OR REPLACE(REPLACE(preco, 'R$ ', ''), '.', '') = '{{ $('When Executed by Another Workflow').item.json.preco }}') THEN 100\n         WHEN UPPER(cor) = UPPER('{{ $('When Executed by Another Workflow').item.json.cor }}') THEN 90\n         ELSE 80\n       END as match_quality\nFROM estoque \nWHERE UPPER(modelo) ILIKE UPPER('%{{ $('Code2').item.json.modelo_normalizado }}%')\nORDER BY match_quality DESC, score DESC\nLIMIT 1;",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.postgres",
+        "typeVersion": 2.6,
+        "position": [
+          -220,
+          700
+        ],
+        "id": "844bd20f-b9df-4b84-9af8-999fa092a70a",
+        "name": "Postgres"
+      },
+      {
+        "parameters": {
+          "amount": 20
+        },
+        "type": "n8n-nodes-base.wait",
+        "typeVersion": 1.1,
+        "position": [
+          -640,
+          380
+        ],
+        "id": "5a023306-d4df-4b4d-91b9-afd0d82a4218",
+        "name": "Wait",
+        "webhookId": "fde412cb-d629-4143-86a2-370492da083f"
+      },
+      {
+        "parameters": {
+          "resource": "messages-api",
+          "instanceName": "{{EVOLUTION_INSTANCE}}",
+          "remoteJid": "={{ $json.body.telefone }}",
+          "messageText": "=Hi {{ $json.body.nome.split(' ')[0] }}, how are you?\n\nI'm the financing assistant here at the dealership and I'll help you with your financing simulation, ok?\n\nJust to confirm your details:\n\n*Full Name:* {{ $json.body.nome }}\n*Reference:* {{ $json.body.customer_ref }}\n*Date of Birth:* {{ $json.body.nascimento }}\n\nThe simulation will be for *{{ $json.body.marca }} {{ $json.body.modelo }}* at *{{ $json.body.preco }}*, correct?",
+          "options_message": {}
+        },
+        "type": "n8n-nodes-evolution-api.evolutionApi",
+        "typeVersion": 1,
+        "position": [
+          -480,
+          380
+        ],
+        "id": "58ec3cb7-7334-49d5-87ee-f719ba1c0262",
+        "name": "Evolution API"
+      },
+      {
+        "parameters": {
+          "httpMethod": "POST",
+          "path": "financiamento_agent",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [
+          -240,
+          180
+        ],
+        "id": "06fb005e-199f-46cf-858b-aa22eab460c8",
+        "name": "Webhook1",
+        "webhookId": "bafd5dbb-3072-44f9-9f73-57c5c3120cf4"
+      },
+      {
+        "parameters": {
+          "operation": "get",
+          "tableId": "dados_cliente",
+          "filters": {
+            "conditions": [
+              {
+                "keyName": "sessionid",
+                "keyValue": "={{ $json.body.sessionId }}"
+              }
+            ]
+          }
+        },
+        "type": "n8n-nodes-base.supabase",
+        "typeVersion": 1,
+        "position": [
+          -100,
+          180
+        ],
+        "id": "da163fd1-6f1f-4e31-b81a-7f131a4d565f",
+        "name": "Supabase2"
+      },
+      {
+        "parameters": {},
+        "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+        "typeVersion": 1,
+        "position": [
+          960,
+          380
+        ],
+        "id": "f0b3cc2a-7f53-457f-995f-cbc793ebb65f",
+        "name": "Calculator"
+      },
+      {
+        "parameters": {
+          "workflowId": {
+            "__rl": true,
+            "value": "nxlM1uo8npvjFdBo",
+            "mode": "list",
+            "cachedResultName": "Messaging Reply"
+          },
+          "workflowInputs": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "mensagem": "={{ $('AI Agent').item.json.output }}",
+              "destinatario": "={{ $('Webhook1').item.json.body.telefone }}",
+              "instancia": "devlabz",
+              "sessionId": "={{ $('Webhook1').item.json.body.sessionId }}",
+              "input_agent": "={{ $('Webhook1').item.json.body.mensagem }}",
+              "output_agent": "={{ $json.output }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "mensagem",
+                "displayName": "mensagem",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              },
+              {
+                "id": "destinatario",
+                "displayName": "destinatario",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              },
+              {
+                "id": "instancia",
+                "displayName": "instancia",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              },
+              {
+                "id": "imagem",
+                "displayName": "imagem",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              },
+              {
+                "id": "sessionId",
+                "displayName": "sessionId",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "input_agent",
+                "displayName": "input_agent",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "output_agent",
+                "displayName": "output_agent",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": true
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.executeWorkflow",
+        "typeVersion": 1.2,
+        "position": [
+          1160,
+          40
+        ],
+        "id": "56e96838-5b59-4f33-a9d6-d4d024e5dfee",
+        "name": "Execute Workflow"
+      },
+      {
+        "parameters": {
+          "jsCode": "const input = $input.item.json;\n\nconst precoLimpo = input.preco\n  .replace('R$', '')\n  .replace(/\\./g, '')\n  .replace(',', '.')\n  .trim();\n\nconst precoNumerico = Math.round(parseFloat(precoLimpo));\n\nreturn {\n  json: {\n    preco_numerico: precoNumerico\n  }\n};\n"
+        },
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          420,
+          180
+        ],
+        "id": "476e794d-21dc-4edb-96ee-002f35fe0b55",
+        "name": "Code"
+      },
+      {
+        "parameters": {
+          "operation": "set",
+          "key": "={{ $('When Executed by Another Workflow').item.json.sessionId }}_block",
+          "value": "true",
+          "keyType": "string",
+          "expire": true,
+          "ttl": 20
+        },
+        "id": "8dade714-cede-4a37-8ec1-fc3f392fbceb",
+        "name": "Parar Resposta Agent",
+        "type": "n8n-nodes-base.redis",
+        "typeVersion": 1,
+        "position": [
+          260,
+          700
+        ],
+        "alwaysOutputData": true
+      },
+      {
+        "parameters": {
+          "httpMethod": "POST",
+          "path": "calculo_financiamento",
+          "responseMode": "lastNode",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [
+          500,
+          760
+        ],
+        "id": "e843baf8-736a-4530-a539-4779763ed677",
+        "name": "calculo_financiamento",
+        "webhookId": "9e080a3b-e69c-413b-a45f-db101fe4549a"
+      },
+      {
+        "parameters": {
+          "toolDescription": "utilize essa tool para fazer o calculo de financiamento e verificar disponibilidade de credito.\n",
+          "method": "POST",
+          "url": "https://example.com/webhook/calculate-financing",
+          "sendBody": true,
+          "bodyParameters": {
+            "parameters": [
+              {
+                "name": "customer_ref",
+                "value": "={{ $fromAI('customer_ref', `customer reference`, 'number') }}"
+              },
+              {
+                "name": "nome_cliente",
+                "value": "={{ $('Supabase2').item.json.nome }}"
+              },
+              {
+                "name": "modelo_carro",
+                "value": "={{ $('Supabase2').item.json.modelo }}"
+              },
+              {
+                "name": "valor",
+                "value": "={{ $('Code').item.json.preco_numerico }}"
+              },
+              {
+                "name": "entrada",
+                "value": "={{ $fromAI('entrada', `valor de entrada de financiamento`, 'number') }}"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.httpRequestTool",
+        "typeVersion": 4.2,
+        "position": [
+          680,
+          380
+        ],
+        "id": "ce6db0c2-a2f6-4a53-b28a-3a62c7089e2c",
+        "name": "calcula_financiamento"
+      },
+      {
+        "parameters": {
+          "url": "https://example.com/api/credit-score",
+          "sendQuery": true,
+          "queryParameters": {
+            "parameters": [
+              {
+                "name": "Reference",
+                "value": "={{ $json.body.customer_ref }}"
+              },
+              {
+                "name": "TOKEN",
+                "value": "sua api key"
+              },
+              {
+                "name": "GERARCOMPROVANTE",
+                "value": "false"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [
+          680,
+          760
+        ],
+        "id": "a76adce7-88dc-416d-891d-6d96cd168624",
+        "name": "busca score",
+        "onError": "continueErrorOutput"
+      },
+      {
+        "parameters": {
+          "jsCode": "// Function Node para n8n: agrupa as informações extraídas em um único objeto (um único item de saída)\n\nconst resultado = items.map(item => {\n  const data = item.json;\n  const meta    = data.metaDados || {};\n  const ret     = data.retorno || {};\n  const pf = ret.pessoaFisica || {};\n\n  return {\n    nome_cliente:       meta.usuario || null,\n    customer_ref:        (ret.documentoConsultado || '').replace(/\\D/g, ''),\n    data_consulta:      ret.dataConsulta || null,\n    score:              pf.score || null,\n    faixa_score:        pf.faixaScore || null,\n    capacidade_pagamento: pf.capacidadePagamento || null,\n    perfil:             pf.perfil || null,\n    status_pendencia:   pf.pendenciaFinanceira?.status || null,\n    total_pendencia:    pf.pendenciaFinanceira?.totalPendencia ?? null\n  };\n});\n\n// Retorna um único item com a variável 'resultado_final'\nreturn [{ json: { resultado_final: resultado } }];\n"
+        },
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          860,
+          680
+        ],
+        "id": "b22c9666-4bd1-4a5a-959f-9a3eceda5f45",
+        "name": "filtra"
+      },
+      {
+        "parameters": {
+          "jsCode": "// Puxa os dados do node \"calculo_financiamento\"\nconst input = $('calculo_financiamento').first().json.body;\nconst modeloCarro = input.modelo_carro || 'Não especificado';\nconst valorCarro = parseFloat(input.valor) || 0;\nconst entrada = parseFloat(input.entrada) || 0;\n\n// Calcula o percentual de entrada e o valor financiado\nconst percentualEntrada = valorCarro > 0 ? (entrada / valorCarro) * 100 : 0;\nconst valorFinanciado = valorCarro - entrada;\n\n// Dados do cliente (resultado_final)\nconst dadosEntrada = items[0].json || {};\nconst cliente = {\n  customer_ref: input.customer_ref || null,\n  nome_cliente: input.nome_cliente || null,\n  score: dadosEntrada.resultado_final?.[0]?.score || 0,\n  faixa_score: dadosEntrada.resultado_final?.[0]?.faixa_score || null\n};\n\nconst score = parseInt(cliente.score) || 0;\n\n// Variáveis de decisão\nlet taxaJurosMensal = 3.5;\nlet maxParcelas = 24;\nlet aprovado = false;\nlet motivoRecusa = 'Score muito baixo para financiamento (abaixo de 500)';\n\n// Lógica de score + entrada\nif (score >= 700) {\n  taxaJurosMensal = 1.0;\n  maxParcelas = 60;\n  aprovado = true;\n} else if (score >= 600) {\n  taxaJurosMensal = 1.5;\n  maxParcelas = 48;\n  aprovado = true;\n} else if (score >= 500) {\n  taxaJurosMensal = 2.5;\n  maxParcelas = 36;\n  aprovado = true;\n}\n\n// Ajustes dinâmicos com base na entrada\nif (percentualEntrada >= 40) {\n  aprovado = true;\n  motivoRecusa = null;\n\n  const descontoJuros = Math.min((percentualEntrada - 40) * 0.05, 1.0);\n  taxaJurosMensal = Math.max(taxaJurosMensal - descontoJuros, 0.8);\n  maxParcelas += Math.floor(percentualEntrada / 5);\n  maxParcelas = Math.min(maxParcelas, 72);\n}\n\n// Função de cálculo de parcela (Price)\nfunction calcularParcela(valor, taxa, parcelas) {\n  const i = taxa / 100;\n  return valor * (i * Math.pow(1 + i, parcelas)) / (Math.pow(1 + i, parcelas) - 1);\n}\n\nif (!aprovado) {\n  return [{\n    json: {\n      nome_cliente: cliente.nome_cliente,\n      customer_ref: cliente.customer_ref,\n      modelo_carro: modeloCarro,\n      valor_carro: valorCarro,\n      entrada: entrada,\n      valor_financiado: valorFinanciado,\n      percentual_entrada: parseFloat(percentualEntrada.toFixed(2)),\n      score: cliente.score,\n      faixa_score: cliente.faixa_score,\n      status_financiamento: \"Reprovado\",\n      motivo_recusa: motivoRecusa\n    }\n  }];\n}\n\nconst numeroParcelas = Math.min(maxParcelas, 72);\nconst valorParcela = calcularParcela(valorFinanciado, taxaJurosMensal, numeroParcelas);\nconst totalPago = valorParcela * numeroParcelas;\n\nreturn [{\n  json: {\n    nome_cliente: cliente.nome_cliente,\n    customer_ref: cliente.customer_ref,\n    modelo_carro: modeloCarro,\n    valor_carro: valorCarro,\n    entrada: entrada,\n    valor_financiado: valorFinanciado,\n    percentual_entrada: parseFloat(percentualEntrada.toFixed(2)),\n    valor_total_financiado: parseFloat(valorFinanciado.toFixed(2)),\n    score: cliente.score,\n    faixa_score: cliente.faixa_score,\n    status_financiamento: \"Aprovado\",\n    taxa_juros_mensal: parseFloat(taxaJurosMensal.toFixed(2)),\n    numero_parcelas: numeroParcelas,\n    valor_parcela: parseFloat(valorParcela.toFixed(2)),\n    total_pago: parseFloat(totalPago.toFixed(2))\n  }\n}];\n"
+        },
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          1020,
+          680
+        ],
+        "id": "d25cc862-375e-41b9-8776-a63fc754ff35",
+        "name": "calcula"
+      },
+      {
+        "parameters": {
+          "jsCode": "// Read the input data\nconst financiamento = items[0].json || {};\n\n// Build the financing explanation\nlet resposta = `Hi, ${financiamento.nome_cliente || 'Customer'},`;\nresposta += `Here are the details of your financing simulation:\\n\\n`;\n\nresposta += `Selected vehicle: ${financiamento.modelo_carro || 'Not provided'}\\n`;\nresposta += `Vehicle price: $ ${parseFloat(financiamento.valor_carro || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n`;\nresposta += `Down payment: $ ${parseFloat(financiamento.entrada || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })} (${parseFloat(financiamento.percentual_entrada || 0).toFixed(2)}% of the vehicle price)\\n`;\nresposta += `Financed amount: $ ${parseFloat(financiamento.valor_financiado || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n\\n`;\n\nif (financiamento.status_financiamento === \"Reprovado\") {\n  resposta += `Financing status: Declined\\n`;\n  resposta += `Reason: ${financiamento.motivo_recusa || 'Insufficient score'}\\n\\n`;\n  resposta += `If you like, we can look at other options or wait for a new review later.\\n`;\n} else {\n  resposta += `Financing status: Approved\\n`;\n  resposta += `Credit score used in the review: ${financiamento.score || 'Not provided'}\\n`;\n  resposta += `Monthly interest rate applied: ${parseFloat(financiamento.taxa_juros_mensal || 0).toFixed(2)}%\\n`;\n  resposta += `Number of installments: ${financiamento.numero_parcelas}\\n\\n`;\n\n  // Show extra costs if present (simple)\n  if (financiamento.custos_administrativos > 0) {\n    resposta += `Administrative costs applied: $ ${parseFloat(financiamento.custos_administrativos || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n`;\n  }\n\n  if (financiamento.seguro_veicular > 0) {\n    resposta += `Vehicle insurance: $ ${parseFloat(financiamento.seguro_veicular || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n`;\n  }\n\n  resposta += `Total amount to be financed: $ ${parseFloat(financiamento.valor_total_financiado || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n\\n`;\n\n  resposta += `Approximate installment value: $ ${parseFloat(financiamento.valor_parcela || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n`;\n  resposta += `Total to be paid at the end of the financing: $ ${parseFloat(financiamento.total_pago || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\\n\\n`;\n\n  resposta += `How the calculation works:\\n`;\n  resposta += `The installment value is computed using the Price method (fixed installments), based on the total financed amount, the monthly interest rate and the number of installments.\\n\\n`;\n\n  resposta += `Remember: the larger the down payment, the lower the interest rate and the more installment options available.\\n`;\n  resposta += `Keeping a good credit history also helps to get better terms in future simulations.\\n\\n`;\n\n  resposta += `If you have any questions or want to move forward with the financing, I am here to help.\\n`;\n}\n\n// Return the response as JSON to send to the customer\nreturn [{\n  json: {\n    mensagem_final: resposta\n  }\n}];"
+        },
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          1160,
+          680
+        ],
+        "id": "16efeb53-bc50-470f-86d0-61abba39fe71",
+        "name": "Code1"
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "1cd2e292-045f-4d4c-b692-552d26ccb639",
+                "name": "tool_response",
+                "value": "=respond with exactly this: {{ $json.mensagem_final }}",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          1320,
+          680
+        ],
+        "id": "1191c168-23f5-427c-89f0-b5f8a3afce39",
+        "name": "Edit Fields1"
+      },
+      {
+        "parameters": {
+          "jsCode": "const input = $json.modelo || '';\n\n// Extrai apenas a primeira palavra significativa do modelo\nconst palavras = input.trim().split(' ');\nconst modeloPrincipal = palavras[0]; // Pega só a primeira palavra (ex: \"Sentra\")\n\n// Normaliza apenas a palavra principal\nconst normalizado = modeloPrincipal\n  .normalize(\"NFD\")\n  .replace(/[\\u0300-\\u036f]/g, \"\")\n  .replace(/HB20/gi, 'HB 20')\n  .toUpperCase()\n  .trim();\n\nreturn [{ json: { modelo_normalizado: normalizado } }];"
+        },
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          -360,
+          700
+        ],
+        "id": "bab48e7e-8bde-4d63-b2a3-a921f6628c69",
+        "name": "Code2"
+      },
+      {
+        "parameters": {
+          "workflowId": {
+            "__rl": true,
+            "value": "KAX6D48iolfSh18y",
+            "mode": "id"
+          },
+          "workflowInputs": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "nome": "={{ $('Supabase2').item.json.nome }}",
+              "email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('email', `email do cliente`, 'string') }}",
+              "dataehora": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('dataehora', `sem timezone`, 'string') }}",
+              "telefone": "={{ $('Supabase2').item.json.telefone }}",
+              "sessionId": "={{ $('Supabase2').item.json.sessionid }}",
+              "veiculo": "={{ $('Supabase2').item.json.modelo }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "nome",
+                "displayName": "nome",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              },
+              {
+                "id": "telefone",
+                "displayName": "telefone",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              },
+              {
+                "id": "email",
+                "displayName": "email",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              },
+              {
+                "id": "dataehora",
+                "displayName": "dataehora",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              },
+              {
+                "id": "sessionId",
+                "displayName": "sessionId",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "veiculo",
+                "displayName": "veiculo",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          }
+        },
+        "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+        "typeVersion": 2.2,
+        "position": [
+          840,
+          380
+        ],
+        "id": "dbc02b81-c044-4cbe-9a16-499574993726",
+        "name": "testdrive"
+      },
+      {
+        "parameters": {
+          "workflowId": {
+            "__rl": true,
+            "value": "YcCCCDAajcEy99WN",
+            "mode": "id"
+          },
+          "workflowInputs": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "mensagem": "={{ $('Webhook1').item.json.body.mensagem }}",
+              "telefone": "={{ $('Webhook1').item.json.body.telefone }}",
+              "sessionId": "={{ $('Webhook1').item.json.body.sessionId }}",
+              "status": "Indefinido"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "mensagem",
+                "displayName": "mensagem",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              },
+              {
+                "id": "telefone",
+                "displayName": "telefone",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              },
+              {
+                "id": "sessionId",
+                "displayName": "sessionId",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              },
+              {
+                "id": "status",
+                "displayName": "status",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string"
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          }
+        },
+        "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+        "typeVersion": 2.2,
+        "position": [
+          1080,
+          380
+        ],
+        "id": "e85f5a0b-c2d0-4e38-b979-a4e3d68259db",
+        "name": "agent_inicial"
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "dc850a73-db3e-4b7e-a964-fa561fdb6e18",
+                "leftValue": "={{ $json.output }}",
+                "rightValue": "",
+                "operator": {
+                  "type": "string",
+                  "operation": "notEmpty",
+                  "singleValue": true
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.2,
+        "position": [
+          920,
+          180
+        ],
+        "id": "a809a0b3-a4f6-478a-be24-2ccccf7c3207",
+        "name": "If"
+      },
+      {
+        "parameters": {},
+        "type": "n8n-nodes-base.noOp",
+        "typeVersion": 1,
+        "position": [
+          1160,
+          200
+        ],
+        "id": "f2d80b1e-ec12-4369-9bfa-514e3ae04583",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "parameters": {
+          "operation": "executeQuery",
+          "query": "SELECT *, \n       similarity(UPPER(modelo), UPPER('{{ $('Webhook1').item.json.modelo_veiculo }}')) as score,\n       CASE \n         WHEN UPPER(cor) = UPPER('{{ $('Supabase2').item.json.cor }}') \n              AND (preco = '{{ $('Supabase2').item.json.preco }}'\n                   OR preco = 'R$ {{ $('Supabase2').item.json.preco }}'\n                   OR REPLACE(REPLACE(preco, 'R$ ', ''), '.', '') = '{{ $('Supabase2').item.json.preco }}') THEN 100\n         WHEN UPPER(cor) = UPPER('{{ $('Supabase2').item.json.cor }}') THEN 90\n         ELSE 80\n       END as match_quality\nFROM estoque \nWHERE UPPER(modelo) ILIKE UPPER('%{{ $('Code3').item.json.modelo_normalizado }}%')\nORDER BY match_quality DESC, score DESC\nLIMIT 1;\n",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.postgres",
+        "typeVersion": 2.6,
+        "position": [
+          240,
+          180
+        ],
+        "id": "b7056b73-096b-4fe0-895d-11f7e44d43db",
+        "name": "Postgres2"
+      },
+      {
+        "parameters": {
+          "jsCode": "const input = $json.modelo || '';\n\n// Extrai apenas a primeira palavra significativa do modelo\nconst palavras = input.trim().split(' ');\nconst modeloPrincipal = palavras[0]; // Pega só a primeira palavra (ex: \"Sentra\")\n\n// Normaliza apenas a palavra principal\nconst normalizado = modeloPrincipal\n  .normalize(\"NFD\")\n  .replace(/[\\u0300-\\u036f]/g, \"\")\n  .replace(/HB20/gi, 'HB 20')\n  .toUpperCase()\n  .trim();\n\nreturn [{ json: { modelo_normalizado: normalizado } }];"
+        },
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          80,
+          180
+        ],
+        "id": "11d61ab8-2d81-421b-a607-8372c8062d1a",
+        "name": "Code3"
+      },
+      {
+        "parameters": {
+          "content": "# Receive Financing Intent",
+          "height": 80,
+          "width": 600,
+          "color": 5
+        },
+        "type": "n8n-nodes-base.stickyNote",
+        "position": [
+          -860,
+          580
+        ],
+        "typeVersion": 1,
+        "id": "b7541e9e-6fea-4138-be8e-a7e91c33ec7e",
+        "name": "Sticky Note"
+      },
+      {
+        "parameters": {
+          "content": "",
+          "height": 300,
+          "width": 1320,
+          "color": 3
+        },
+        "type": "n8n-nodes-base.stickyNote",
+        "position": [
+          -880,
+          560
+        ],
+        "typeVersion": 1,
+        "id": "c7412459-02fe-4cb4-a2c2-479de4b50096",
+        "name": "Sticky Note1"
+      },
+      {
+        "parameters": {
+          "content": "# Start Financing Assistant",
+          "height": 80,
+          "width": 220,
+          "color": 5
+        },
+        "type": "n8n-nodes-base.stickyNote",
+        "position": [
+          -860,
+          260
+        ],
+        "typeVersion": 1,
+        "id": "38317aaf-ad46-4f84-b2cb-00e2324cf740",
+        "name": "Sticky Note2"
+      },
+      {
+        "parameters": {
+          "content": "",
+          "height": 300,
+          "width": 600,
+          "color": 3
+        },
+        "type": "n8n-nodes-base.stickyNote",
+        "position": [
+          -880,
+          240
+        ],
+        "typeVersion": 1,
+        "id": "34e3a578-2d26-4704-b154-0e87a6b2b741",
+        "name": "Sticky Note3"
+      },
+      {
+        "parameters": {
+          "content": "# Receive Financing Intent",
+          "height": 80,
+          "width": 600,
+          "color": 5
+        },
+        "type": "n8n-nodes-base.stickyNote",
+        "position": [
+          -240,
+          40
+        ],
+        "typeVersion": 1,
+        "id": "c8364891-6015-4e71-9259-ccd5a4f70e6b",
+        "name": "Sticky Note4"
+      },
+      {
+        "parameters": {
+          "content": "",
+          "height": 520,
+          "width": 1600,
+          "color": 3
+        },
+        "type": "n8n-nodes-base.stickyNote",
+        "position": [
+          -260,
+          20
+        ],
+        "typeVersion": 1,
+        "id": "5d45b5b8-1941-481b-998d-8dc3d0608c61",
+        "name": "Sticky Note5"
+      },
+      {
+        "parameters": {
+          "content": "# Calculate Financing",
+          "height": 80,
+          "width": 400,
+          "color": 5
+        },
+        "type": "n8n-nodes-base.stickyNote",
+        "position": [
+          480,
+          580
+        ],
+        "typeVersion": 1,
+        "id": "33db9ca6-dc02-4276-8dd5-cc373439e339",
+        "name": "Sticky Note6"
+      },
+      {
+        "parameters": {
+          "content": "",
+          "height": 440,
+          "width": 1060,
+          "color": 3
+        },
+        "type": "n8n-nodes-base.stickyNote",
+        "position": [
+          460,
+          560
+        ],
+        "typeVersion": 1,
+        "id": "00213c1f-bef8-4a3f-b590-49ba03fb2701",
+        "name": "Sticky Note7"
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "113acc75-e11f-4775-83de-808812a1fe33",
+                "name": "response",
+                "value": "I need a valid reference to run the check, can you share it {{nome}} please?",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          860,
+          840
+        ],
+        "id": "6602f766-1d8a-4f48-8490-e6b641bfcc07",
+        "name": "Edit Fields2"
+      }
+    ],
+    "connections": {
+      "OpenAI Chat Model": {
+        "ai_languageModel": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_languageModel",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Postgres Chat Memory": {
+        "ai_memory": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_memory",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "When Executed by Another Workflow": {
+        "main": [
+          [
+            {
+              "node": "Supabase",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Supabase": {
+        "main": [
+          [
+            {
+              "node": "Supabase1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Supabase1": {
+        "main": [
+          [
+            {
+              "node": "Code2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Edit Fields": {
+        "main": [
+          [
+            {
+              "node": "Parar Resposta Agent",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Postgres": {
+        "main": [
+          [
+            {
+              "node": "HTTP Request",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "HTTP Request": {
+        "main": [
+          [
+            {
+              "node": "Edit Fields",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Webhook": {
+        "main": [
+          [
+            {
+              "node": "Wait",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Wait": {
+        "main": [
+          [
+            {
+              "node": "Evolution API",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Webhook1": {
+        "main": [
+          [
+            {
+              "node": "Supabase2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Supabase2": {
+        "main": [
+          [
+            {
+              "node": "Code3",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Calculator": {
+        "ai_tool": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "AI Agent": {
+        "main": [
+          [
+            {
+              "node": "If",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Code": {
+        "main": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "calcula_financiamento": {
+        "ai_tool": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "busca score": {
+        "main": [
+          [
+            {
+              "node": "filtra",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Edit Fields2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "filtra": {
+        "main": [
+          [
+            {
+              "node": "calcula",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "calcula": {
+        "main": [
+          [
+            {
+              "node": "Code1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Code1": {
+        "main": [
+          [
+            {
+              "node": "Edit Fields1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "calculo_financiamento": {
+        "main": [
+          [
+            {
+              "node": "busca score",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Code2": {
+        "main": [
+          [
+            {
+              "node": "Postgres",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "testdrive": {
+        "ai_tool": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "agent_inicial": {
+        "ai_tool": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "If": {
+        "main": [
+          [
+            {
+              "node": "Execute Workflow",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "No Operation, do nothing",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Postgres2": {
+        "main": [
+          [
+            {
+              "node": "Code",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Code3": {
+        "main": [
+          [
+            {
+              "node": "Postgres2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "parentFolderId": null,
+  "scopes": [
+    "workflow:create",
+    "workflow:delete",
+    "workflow:execute",
+    "workflow:execute-chat",
+    "workflow:list",
+    "workflow:move",
+    "workflow:publish",
+    "workflow:read",
+    "workflow:share",
+    "workflow:unpublish",
+    "workflow:unshare",
+    "workflow:update",
+    "workflow:updateRedactionSetting"
+  ],
+  "canExecute": true
+}

@@ -1,0 +1,216 @@
+{
+  "id": "FZN6mrVFGUyNzrlP",
+  "name": "encerra_negociacao",
+  "active": true,
+  "isArchived": false,
+  "triggerCount": 0,
+  "createdAt": "2026-03-23T20:22:05.055Z",
+  "updatedAt": "2026-06-02T18:05:58.629Z",
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  },
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a SQL query": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "status"
+            },
+            {
+              "name": "data_vencimento"
+            },
+            {
+              "name": "opcao_pagamento"
+            },
+            {
+              "name": "valor_da_parcela"
+            },
+            {
+              "name": "valor_entrada"
+            },
+            {
+              "name": "sessonid"
+            }
+          ]
+        }
+      },
+      "id": "c055762a-8fe7-4141-a639-df2372f30060",
+      "typeVersion": 1.1,
+      "name": "When Executed by Another Workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        272,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE public.chats\nSET \n  agente_atual = NULL,\n  status_negociacao = '{{ $json.status }}'\nWHERE conversation_id = '{{ $json.sessonid }}';\n\nDELETE FROM public.active_deals\nWHERE sessonid = '{{ $json.sessonid }}';",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        480,
+        352
+      ],
+      "id": "440f90ca-4486-4a7e-8eff-367d6739b840",
+      "name": "Execute a SQL query"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"status\": \"{{ $('When Executed by Another Workflow').item.json.status }}\",\n  \"data_vencimento\": \"{{ $('When Executed by Another Workflow').item.json.data_vencimento }}\",\n  \"opcao_pagamento\": \"{{ $('When Executed by Another Workflow').item.json.opcao_pagamento }}\",\n  \"valor_da_parcela\": \"{{ $('When Executed by Another Workflow').item.json.valor_da_parcela }}\",\n  \"valor_entrada\": \"{{ $('When Executed by Another Workflow').item.json.valor_entrada }}\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        688,
+        352
+      ],
+      "id": "129e4684-2c1e-4e69-ae23-c237f493fc94",
+      "name": "Edit Fields"
+    }
+  ],
+  "activeVersion": {
+    "nodes": [
+      {
+        "parameters": {
+          "workflowInputs": {
+            "values": [
+              {
+                "name": "status"
+              },
+              {
+                "name": "data_vencimento"
+              },
+              {
+                "name": "opcao_pagamento"
+              },
+              {
+                "name": "valor_da_parcela"
+              },
+              {
+                "name": "valor_entrada"
+              },
+              {
+                "name": "sessonid"
+              }
+            ]
+          }
+        },
+        "id": "c055762a-8fe7-4141-a639-df2372f30060",
+        "typeVersion": 1.1,
+        "name": "When Executed by Another Workflow",
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "position": [
+          272,
+          352
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "executeQuery",
+          "query": "UPDATE public.chats\nSET \n  agente_atual = NULL,\n  status_negociacao = '{{ $json.status }}'\nWHERE conversation_id = '{{ $json.sessonid }}';\n\nDELETE FROM public.active_deals\nWHERE sessonid = '{{ $json.sessonid }}';",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.postgres",
+        "typeVersion": 2.6,
+        "position": [
+          480,
+          352
+        ],
+        "id": "440f90ca-4486-4a7e-8eff-367d6739b840",
+        "name": "Execute a SQL query"
+      },
+      {
+        "parameters": {
+          "mode": "raw",
+          "jsonOutput": "={\n  \"status\": \"{{ $('When Executed by Another Workflow').item.json.status }}\",\n  \"data_vencimento\": \"{{ $('When Executed by Another Workflow').item.json.data_vencimento }}\",\n  \"opcao_pagamento\": \"{{ $('When Executed by Another Workflow').item.json.opcao_pagamento }}\",\n  \"valor_da_parcela\": \"{{ $('When Executed by Another Workflow').item.json.valor_da_parcela }}\",\n  \"valor_entrada\": \"{{ $('When Executed by Another Workflow').item.json.valor_entrada }}\"\n} ",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          688,
+          352
+        ],
+        "id": "129e4684-2c1e-4e69-ae23-c237f493fc94",
+        "name": "Edit Fields"
+      }
+    ],
+    "connections": {
+      "When Executed by Another Workflow": {
+        "main": [
+          [
+            {
+              "node": "Execute a SQL query",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Execute a SQL query": {
+        "main": [
+          [
+            {
+              "node": "Edit Fields",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "parentFolderId": null,
+  "scopes": [
+    "workflow:create",
+    "workflow:delete",
+    "workflow:execute",
+    "workflow:execute-chat",
+    "workflow:list",
+    "workflow:move",
+    "workflow:publish",
+    "workflow:read",
+    "workflow:share",
+    "workflow:unpublish",
+    "workflow:unshare",
+    "workflow:update",
+    "workflow:updateRedactionSetting"
+  ],
+  "canExecute": true
+}

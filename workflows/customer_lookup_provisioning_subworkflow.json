@@ -1,0 +1,293 @@
+{
+  "id": "wv1x8VqbuT8JKVvD",
+  "name": "Consulta_Cliente",
+  "active": true,
+  "isArchived": false,
+  "triggerCount": 0,
+  "createdAt": "2025-06-11T13:27:20.868Z",
+  "updatedAt": "2026-06-02T18:07:57.456Z",
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  },
+  "connections": {
+    "Gerar sessionID": {
+      "main": [
+        [
+          {
+            "node": "cria_cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe?": {
+      "main": [
+        [
+          {
+            "node": "resposta",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gerar sessionID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_cliente": {
+      "main": [
+        [
+          {
+            "node": "resposta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_cliente": {
+      "main": [
+        [
+          {
+            "node": "existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "clientes_b": {
+      "main": [
+        [
+          {
+            "node": "dados_cliente1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados_cliente1": {
+      "main": [
+        [
+          {
+            "node": "busca_cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# Customer Lookup",
+        "height": 80,
+        "width": 310,
+        "color": 5
+      },
+      "id": "a4aed9b5-f2b8-4b80-a465-92670427cf14",
+      "name": "Sticky Note63",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "action": "generate"
+      },
+      "type": "n8n-nodes-base.crypto",
+      "typeVersion": 1,
+      "position": [
+        580,
+        160
+      ],
+      "id": "001a18a6-57ed-483b-9fd2-e7e8078a6257",
+      "name": "Gerar sessionID"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a3b57478-61e1-4253-9ac6-261325fdbdf4",
+              "name": "dados_cliente",
+              "value": "={{ $json }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a2e49eea-32c3-458b-8cf9-27f0dfcce23a",
+      "name": "resposta",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        880,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "4a6d9aac-8565-4c58-abe3-8741393a5535",
+              "leftValue": "={{ $json.telefone }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        380,
+        60
+      ],
+      "id": "5c2a5367-a821-4dcc-b874-0fd91c601ab7",
+      "name": "existe?"
+    },
+    {
+      "parameters": {
+        "tableId": "dados_cliente",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "sessionid",
+              "fieldValue": "={{ $json.data }}"
+            },
+            {
+              "fieldId": "telefone",
+              "fieldValue": "={{ $('dados_cliente1').item.json.dados_cliente.telefone }}"
+            },
+            {
+              "fieldId": "nome",
+              "fieldValue": "={{ $('dados_cliente1').item.json.dados_cliente.nome }}"
+            },
+            {
+              "fieldId": "sessionid",
+              "fieldValue": "={{ $json.data }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        720,
+        160
+      ],
+      "id": "4dcd3b89-b34c-4721-bee4-82188001cf4b",
+      "name": "cria_cliente"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "dados_cliente",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "telefone",
+              "keyValue": "={{ $json.dados_cliente.telefone }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        220,
+        60
+      ],
+      "id": "66c0af60-5f31-4c44-b8b4-c10d56a99bd4",
+      "name": "busca_cliente",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "body"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -120,
+        60
+      ],
+      "id": "2532af1d-c7cb-4f94-b582-aa7be3af9a3d",
+      "name": "clientes_b"
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 400,
+        "width": 1280,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        -80
+      ],
+      "id": "60e01c6a-ccbe-4268-92f5-6b199c67a5db",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7232abab-8844-4494-bba4-cbb2d467f050",
+              "name": "dados_cliente",
+              "value": "={{ $json.body }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        60,
+        60
+      ],
+      "id": "bb792e6a-10b4-4a76-9c91-f965b2b17f73",
+      "name": "dados_cliente1"
+    }
+  ],
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}
